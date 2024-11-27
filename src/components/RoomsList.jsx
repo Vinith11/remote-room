@@ -87,7 +87,7 @@ const RoomsList = () => {
       <ul>
         {data.getAllRooms.map((room) => (
           <li key={room.id}>
-            <Link to={`/devices/${room.id}`}>{room.room_name}</Link>
+            <Link to={`/devices/${room.id}`} className="room-link" >{room.room_name}</Link>
             <button onClick={() => handleDeleteRoom(room.id)}>Delete</button>
           </li>
         ))}

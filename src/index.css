@@ -12,33 +12,19 @@ body {
   background-color: #f9f9f9;
 }
 
-.rooms-list ul, .devices-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.rooms-list li, .devices-list li {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.rooms-list li:hover, .devices-list li:hover {
-  background-color: #f0f0f0;
-}
-
 .rooms-list h2 {
   font-size: 24px;
   margin-bottom: 20px;
+  text-align: center;
+  color: #333;
 }
 
-
+/* Add Room Section */
 .add-room {
   margin-bottom: 20px;
   display: flex;
   gap: 10px;
+  justify-content: center;
 }
 
 .add-room input {
@@ -66,7 +52,6 @@ body {
   padding: 0;
 }
 
-
 .rooms-list li {
   display: flex;
   justify-content: space-between;
@@ -76,10 +61,26 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #ffffff;
+  transition: background-color 0.3s ease;
 }
 
 .rooms-list li:hover {
   background-color: #f0f0f0;
+}
+
+/* Room Links Styling */
+.room-link {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  flex-grow: 1;
+}
+
+.room-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 
 .rooms-list li button {
@@ -95,20 +96,16 @@ body {
   background-color: #e43d3d;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f9;
+.rooms-list li .delete-btn {
+  background-color: #f44336;
+  color: white;
 }
 
-h2 {
-  font-size: 24px;
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
+.rooms-list li .delete-btn:hover {
+  background-color: #e53935;
 }
 
+/* Device List Section */
 .devices-list {
   margin: 20px auto;
   padding: 20px;
@@ -155,62 +152,6 @@ h2 {
 .devices-list button:hover {
   opacity: 0.9;
 }
-
-/* Add Device Section */
-.add-device {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  justify-content: center;
-}
-
-.add-device input {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  flex: 1;
-  font-size: 14px;
-}
-
-.add-device button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.add-device button:hover {
-  background-color: #45a049;
-}
-
-.devices-list li .toggle-btn {
-  background-color: #ffeb3b;
-  color: #333;
-}
-
-.devices-list li .delete-btn {
-  background-color: #f44336;
-  color: white;
-}
-
-.devices-list li .toggle-btn:hover {
-  background-color: #f1c40f;
-}
-
-.devices-list li .delete-btn:hover {
-  background-color: #e53935;
-}
-
-.devices-list .device-status {
-  font-weight: bold;
-  color: #333;
-  margin-right: 10px;
-}
-
-
 
 /* Home Button Styling */
 .home-button {
