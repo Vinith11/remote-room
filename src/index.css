@@ -94,3 +94,118 @@ body {
 .rooms-list li button:hover {
   background-color: #e43d3d;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.devices-list {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.devices-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.devices-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.devices-list li:hover {
+  background-color: #e8f5e9;
+  transform: translateY(-2px);
+}
+
+.devices-list button {
+  padding: 5px 12px;
+  margin-left: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.devices-list button:hover {
+  opacity: 0.9;
+}
+
+/* Add Device Section */
+.add-device {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.add-device input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex: 1;
+  font-size: 14px;
+}
+
+.add-device button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-device button:hover {
+  background-color: #45a049;
+}
+
+.devices-list li .toggle-btn {
+  background-color: #ffeb3b;
+  color: #333;
+}
+
+.devices-list li .delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.devices-list li .toggle-btn:hover {
+  background-color: #f1c40f;
+}
+
+.devices-list li .delete-btn:hover {
+  background-color: #e53935;
+}
+
+.devices-list .device-status {
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
