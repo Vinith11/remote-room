@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useQuery, useMutation, gql } from "@apollo/client";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 // GraphQL Queries and Mutations
 const GET_DEVICES_BY_ROOM_ID = gql`
@@ -45,14 +45,13 @@ const DevicesList = () => {
   const { loading, error, data, refetch } = useQuery(GET_DEVICES_BY_ROOM_ID, {
     variables: { room_id: roomId },
   });
-
   const [createDevice] = useMutation(CREATE_DEVICE);
   const [deleteDevice] = useMutation(DELETE_DEVICE);
   const [toggleDeviceState] = useMutation(TOGGLE_DEVICE_STATE);
-
   const [newDeviceName, setNewDeviceName] = useState("");
+  
+  const navigate = useNavigate(); // Hook for navigation
 
-  // Handle Add Device
   const handleAddDevice = async () => {
     if (!newDeviceName.trim()) {
       alert("Device name cannot be empty!");
@@ -69,7 +68,6 @@ const DevicesList = () => {
     }
   };
 
-  // Handle Delete Device
   const handleDeleteDevice = async (id) => {
     if (window.confirm("Are you sure you want to delete this device?")) {
       try {
@@ -81,7 +79,6 @@ const DevicesList = () => {
     }
   };
 
-  // Handle Toggle Device State
   const handleToggleState = async (id, currentState) => {
     try {
       await toggleDeviceState({ variables: { id, state: !currentState } });
@@ -89,6 +86,10 @@ const DevicesList = () => {
     } catch (err) {
       console.error("Error toggling device state:", err);
     }
+  };
+
+  const goToHome = () => {
+    navigate("/"); // Route to Home page
   };
 
   if (loading) return <p>Loading devices...</p>;
@@ -109,6 +110,11 @@ const DevicesList = () => {
         <button onClick={handleAddDevice}>Add Device</button>
       </div>
 
+            {/* Home Button */}
+      <button className="home-button" onClick={goToHome}>
+        Go to Home
+      </button>
+
       {/* Devices List */}
       <ul>
         {data.getDevicesByRoomId.map((device) => (
@@ -121,6 +127,7 @@ const DevicesList = () => {
           </li>
         ))}
       </ul>
+
     </div>
   );
 };
