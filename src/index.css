@@ -9,6 +9,7 @@ body {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
 .rooms-list ul, .devices-list ul {
@@ -26,4 +27,70 @@ body {
 
 .rooms-list li:hover, .devices-list li:hover {
   background-color: #f0f0f0;
+}
+
+.rooms-list h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+.add-room {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.add-room input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.add-room button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-room button:hover {
+  background-color: #45a049;
+}
+
+.rooms-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+.rooms-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.rooms-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.rooms-list li button {
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rooms-list li button:hover {
+  background-color: #e43d3d;
 }
